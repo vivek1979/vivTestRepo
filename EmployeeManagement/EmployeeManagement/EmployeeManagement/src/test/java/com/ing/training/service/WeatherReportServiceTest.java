@@ -25,4 +25,17 @@ public class WeatherReportServiceTest {
 		 assertEquals("1",weatherAccount.getUserId());
 		 assertEquals("qui est esse",weatherAccount.getTitle());
 		}
+
+         @Test
+	 public void test1() throws Exception {
+		 
+		 WeatherAccount weatherAccount = weatherReportService.getWeatherbyId("2");
+		 Mockito.when(weatherAccount.getUserId()).thenReturn("1");
+		 
+		 assertEquals("1",weatherAccount.getUserId());
+		 assertEquals("qui est esse",weatherAccount.getTitle());
+		}
+
+
+
 }

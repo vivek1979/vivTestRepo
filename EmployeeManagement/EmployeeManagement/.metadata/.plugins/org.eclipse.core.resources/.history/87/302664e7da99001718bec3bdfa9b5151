@@ -1,0 +1,48 @@
+package com.ing.training.service;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.web.client.RestTemplate;
+
+import com.ing.training.model.WeatherAccount;
+
+
+public class WeatherReportServiceTest {
+
+	@Mock
+	RestTemplate restTemplate = new RestTemplate();
+	 @InjectMocks
+	 WeatherReportService weatherReportService = new WeatherReportService();
+	 
+	 @Mock
+	 WeatherAccount weatherAccount;
+	 
+	 @Test
+	 public void test() throws Exception {
+		 
+	//	 Mockito.when(restTemplate.getForObject("https://jsonplaceholder.typicode.com/posts/2",WeatherReportService.class)).thenReturn("https://jsonplaceholder.typicode.com/posts/2");
+		// Mockito.when(restTemplate.getForObject("https://jsonplaceholder.typicode.com/posts/2",String.class)).thenReturn("https://jsonplaceholder.typicode.com/posts/2");
+		 
+	/*	String weather = {
+				  "userId": 1,
+				  "id": 2,
+				  "title": "qui est esse",
+				  "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+				}
+				
+	*/
+		 
+		 Mockito.when(restTemplate.getForObject("https://jsonplaceholder.typicode.com/posts/2",WeatherAccount.class)).thenReturn(weatherAccount);
+		 
+		System.out.println("..."+restTemplate.getForObject("https://jsonplaceholder.typicode.com/posts/2",String.class));
+}
+	 
+}

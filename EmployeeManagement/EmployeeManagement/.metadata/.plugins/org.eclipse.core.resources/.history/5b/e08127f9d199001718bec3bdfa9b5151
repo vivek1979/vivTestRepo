@@ -1,0 +1,5 @@
+package com.ing.training.model;
+
+public class Weather {
+
+}

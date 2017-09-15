@@ -1,0 +1,36 @@
+package com.ing.training.repository.impl;
+
+import java.util.Collections;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.client.RestTemplate;
+
+import com.ing.training.model.Employee;
+import com.ing.training.repository.EmployeeRepository;
+
+
+
+@Repository("employeeRepository")
+public class EmployeeRepositoryImpl implements EmployeeRepository {
+
+	
+	@Autowired
+	RestTemplate restTemplate;
+
+	
+	@Override
+	public String getWeatherbyId(String id) {
+		
+
+		 return  restTemplate.getForObject("api.openweathermap.org/data/2.5/weather?q=London",String.class);
+	
+
+	}
+	
+	}
+
+
+}

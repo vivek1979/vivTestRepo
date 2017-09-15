@@ -1,0 +1,11 @@
+package com.ing.training.repository;
+
+import com.ing.training.model.Employee;
+
+public interface EmployeeRepository {
+
+	String getWeatherbyId(String id);
+
+	
+
+}

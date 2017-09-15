@@ -1,0 +1,23 @@
+package com.ing.training.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.ing.training.model.WeatherAccount;
+@Service
+public class WeatherReportService {
+	
+//@Autowired
+RestTemplate restTemplate;
+	
+
+public WeatherAccount getWeatherbyId(String id) {
+	
+
+	 RestTemplate restTemplate = new RestTemplate();
+	WeatherAccount weatherAccount = restTemplate.getForObject("https://jsonplaceholder.typicode.com/posts/"+id,WeatherAccount.class);
+	return weatherAccount;
+	}
+
+}
